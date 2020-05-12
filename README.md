@@ -6,6 +6,10 @@ Job Search Portal based on Github Jobs Postings
 
 In the project directory, you can run:
 
+### `npm run server`
+
+Run this command before npm start to run the server APIs 
+
 ### `npm start`
 
 Runs the app in the development mode.<br />

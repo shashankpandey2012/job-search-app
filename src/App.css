@@ -1,3 +1,63 @@
+body{
+  background-color: #999191;
+}
+.signup-page{
+  width: 400px;
+  margin: 0 auto;
+  background-color: #84c3ef;
+}
+.signup-page .MuiFormControl-root{
+  margin: 0px 40px;
+  display: flex;
+}
+.modalButtons{
+  display: flex;
+  padding: 36px;
+  margin-right: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+.modalButtons a{
+  color: #fff;
+  cursor: pointer;
+}
+.modalButtons ul {
+  display: flex;
+}
+.modalButtons ul li{
+  padding:20px;
+  text-align: center;
+}
+li.darkgreenBtnHeader{
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.signup-page-heading h1{
+  text-align: center;
+  margin-top: 10px;
+  color: #ffffff;
+}
+.button{
+  width: 250px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+.signup-page .MuiButton-containedPrimary{
+  color: #fff;
+  background-color: #556cd6;
+  display: flex;
+  margin: 40px auto;
+  width: 170px;
+}
+.custom-table>tbody>tr>th{
+  width: 160px;
+}
+
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +95,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.detailGrid ul li{
+  color: #000;
+  font-weight: 800;
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+.detailGrid ul li span{
+  font-weight: 100;
+  margin-left: 20px;
+}
+
+.textArea{
+  margin: 40px auto;
+  width: 300px !important;
+  display: flex;
+  height: 100px !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.inputFile {
+  width: 170px;
+  height: 20px;
+  margin-left: 136px
 }
