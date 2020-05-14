@@ -46,30 +46,32 @@ export const submitLoginAction = (params) => dispatch => {
       type: 'LOGIN_USER_FAILED',
       payload: "Invalid Credentials or User Doesn't Exists"
     });
-  }
-  data = JSON.parse(data);
-  let userData = data.userData;
-  let userObj = userData.find(o => {
-    return (o.email === params.email && o.password === params.password)
-  });
-  if (userObj) {
-     delete userObj.password;
-     let sessionData = {
-       data: userObj,
-       sessionTTL: config.sessionTTLInMinutes * 60 * 1000
-     };
-     sessionStorage.setItem('userData', JSON.stringify(sessionData));
-     sessionStorage.setItem('loggedInTimeStamp', Date.now().toString());
-     dispatch({
-       type: 'LOGIN_USER_SUCCESS',
-       payload: sessionData
-     });
   } else {
-    dispatch({
-      type: 'LOGIN_USER_FAILED',
-      payload: "Invalid Credentials or User Doesn't Exists"
+    data = JSON.parse(data);
+    let userData = data.userData;
+    let userObj = userData.find(o => {
+      return (o.email === params.email && o.password === params.password)
     });
+    if (userObj) {
+      delete userObj.password;
+      let sessionData = {
+        data: userObj,
+        sessionTTL: config.sessionTTLInMinutes * 60 * 1000
+      };
+      sessionStorage.setItem('userData', JSON.stringify(sessionData));
+      sessionStorage.setItem('loggedInTimeStamp', Date.now().toString());
+      dispatch({
+        type: 'LOGIN_USER_SUCCESS',
+        payload: sessionData
+      });
+    } else {
+      dispatch({
+        type: 'LOGIN_USER_FAILED',
+        payload: "Invalid Credentials or User Doesn't Exists"
+      });
+    }
   }
+
 }
 
 export const fetchLoginDetail = (params) => dispatch => {
